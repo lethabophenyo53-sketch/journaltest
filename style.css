@@ -75,3 +75,11 @@ button {
 @keyframes drop {
   to { transform:translateY(100vh); opacity:0; }
 }
+
+.affirm-box {
+  background: #fff0f6;
+  padding: 15px;
+  border-radius: 15px;
+  margin-top: 10px;
+  text-align: center;
+}
