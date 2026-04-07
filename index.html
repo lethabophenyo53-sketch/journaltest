@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aura Journal Final</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="login" class="center">
+  <div class="card">
+    <h1>🔐 Login</h1>
+    <input id="user" placeholder="Username">
+    <input id="pass" type="password" placeholder="Password">
+    <button onclick="login()">Enter</button>
+  </div>
+</div>
+
+<!-- COVER -->
+<div id="cover" class="hidden center" onclick="enterApp()">
+  <div class="card">
+    <h1>✨ Aura Journal</h1>
+    <p>Tap to enter</p>
+  </div>
+</div>
+
+<!-- HOME -->
+<div id="home" class="hidden screen">
+  <h1>🌸 My Journal</h1>
+
+  <button onclick="newEntry()">+ New Entry</button>
+
+  <div id="entries"></div>
+
+  <button onclick="openSettings()">⚙️ Settings</button>
+</div>
+
+<!-- SETTINGS -->
+<div id="settings" class="hidden screen">
+  <h1>⚙️ Settings</h1>
+
+  <select onchange="changeFont(this.value)">
+    <option>Poppins</option>
+    <option>Georgia</option>
+    <option>Playfair Display</option>
+  </select>
+
+  <button onclick="backHome()">⬅ Back</button>
+</div>
+
+<!-- JOURNAL -->
+<div id="journal" class="hidden screen">
+
+  <div class="page active">
+
+    <h2>✨ Journey Map</h2>
+
+    <div class="map">
+      <textarea placeholder="Name"></textarea>
+      <textarea placeholder="Age"></textarea>
+      <textarea placeholder="Dream"></textarea>
+      <textarea placeholder="Energy"></textarea>
+
+      <div class="sparkle">✨</div>
+    </div>
+
+  </div>
+
+  <div class="page">
+    <h2>📅 Weekly Planner</h2>
+    <textarea placeholder="Mon - Sun planning"></textarea>
+  </div>
+
+  <div class="page">
+    <h2>🌷 Daily Reflection</h2>
+    <textarea placeholder="How do you feel?"></textarea>
+    <textarea placeholder="Why?"></textarea>
+
+    <div onclick="rain('💖')">Tap Mood</div>
+  </div>
+
+  <div class="page">
+    <h2>💖 To Do</h2>
+    <input placeholder="Task 1">
+    <input placeholder="Task 2">
+  </div>
+
+  <div class="page">
+    <h2>📖 Real Story</h2>
+    <textarea id="story"></textarea>
+  </div>
+
+  <div class="page">
+  <h2>🌟 Daily Affirmation</h2>
+
+  <p style="text-align:center; opacity:0.7;">
+    Speak life into your day 💖
+  </p>
+
+  <textarea placeholder="Write your affirmation..."></textarea>
+
+  <div class="affirm-box">
+    <p>✨ I am enough</p>
+    <p>✨ I am becoming my best self</p>
+    <p>✨ I attract good energy</p>
+    <p>✨ I am proud of myself</p>
+  </div>
+</div>
+
+  <div class="page">
+    <h2>✨ Glow Routine</h2>
+    <label><input type="checkbox"> Water</label>
+    <label><input type="checkbox"> Sleep</label>
+    <label><input type="checkbox"> Exercise</label>
+  </div>
+
+  <div class="page">
+    <h2>💌 Closing</h2>
+    <textarea id="closing"></textarea>
+
+    <button onclick="saveEntry()">💾 Save</button>
+    <button onclick="finish()">🏠 Finish</button>
+    <button onclick="exportPDF()">📄 Export PDF</button>
+  </div>
+
+  <div class="nav">
+    <button onclick="prev()">⬅</button>
+    <button onclick="next()">➡</button>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
